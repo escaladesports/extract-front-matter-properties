@@ -1,25 +1,39 @@
-# JavaScript Module Boilerplate
+# extract-front-matter-properties
 
-A simple JavaScript boilerplate that outputs to ES5 and ES6.
+Extract a single property from a glob of markdown files.
 
-## Getting started
+## Installation
+
+With npm:
 
 ```bash
-git clone git@github.com:escaladesports/javascript-module-boilerplate.git --depth=1 your-module
-cd your-module
-yarn
-yarn reset
+npm install --save extract-front-matter-properties
 ```
 
-Also make sure to edit the `package.json` file with a new name, version number, author, and anything else you might need.
+Or with Yarn:
+
+```bash
+uarm add extract-front-matter-properties
+```
 
 ## Usage
 
-- `yarn build`: Build browser and node versions of the module
-- `yarn dev`: Run live dev mode
-- `yarn test`: Run mocha tests
-- `yarn analyze`: View bundle sizes
+```javascript
+var extract = require('extract-front-matter-properties')
 
-# Unit Testing
+// Async
+extract.async('./**/*.md', 'id')
+	.then(function(ids){
+		console.log(ids)
+	})
+	.catch(console.error)
 
-Unit tests will be performed pre-commit and pre-publish. You can change this in the npm scripts if this doesn't work well with your use case.
+// Sync
+var ids = extract.sync('./**/*.md', 'id')
+console.log(ids)
+
+```
+
+## Why?
+
+This was originally built for extracting all product IDs for a static site, but could have many more applications.
