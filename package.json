@@ -20,8 +20,7 @@
   "license": "MIT",
   "scripts": {
     "analyze": "esca-scripts analyze --input './src/inject.js' --browser",
-    "build": "esca-scripts build --input './src/*.js' --output ./dist --multiple",
-    "dev": "esca-scripts dev ---input './dev/dev.js, ./dev/index.html' --browser",
+    "build": "esca-scripts build --input src --output dist --multiple --babel",
     "prepublishOnly": "npm run build",
     "reset": "esca-scripts reset",
     "test": "esca-scripts test",
@@ -32,6 +31,7 @@
     "npm-run-all": "^4.1.2"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "front-matter": "^2.3.0",
     "fs-extra": "^5.0.0",
     "globby": "^8.0.1",
