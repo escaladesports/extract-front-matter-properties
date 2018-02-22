@@ -22,14 +22,14 @@ uarm add extract-front-matter-properties
 var extract = require('extract-front-matter-properties')
 
 // Async
-extract.async('./**/*.md', 'id')
+extract('./**/*.md', 'id')
 	.then(function(ids){
 		console.log(ids)
 	})
 	.catch(console.error)
 
 // Sync
-var ids = extract.sync('./**/*.md', 'id')
+var ids = extract('./**/*.md', 'id', { sync: true })
 console.log(ids)
 
 ```
