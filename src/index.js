@@ -1,13 +1,18 @@
+import sync from './sync'
+import async from './async'
 
-console.log('Module loaded')
+module.exports = (path, key, options) => {
+	options = {
+		deep: true,
+		sync: false,
+		unique: true,
+		...options
+	}
 
-export default function(){
-	const def = {
-		test: '123'
+	if(!options.sync){
+		return async(path, key, options)
 	}
-	const obj = {
-		anotherTest: 'abc',
-		...def,
+	else{
+		return sync(path, key, options)
 	}
-	return obj
 }

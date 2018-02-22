@@ -4,8 +4,8 @@
   "keywords": [
     "extract",
     "frontmatter",
-	 "front",
-	 "matter",
+    "front",
+    "matter",
     "properties",
     "markdown",
     "filesystem"
@@ -32,6 +32,9 @@
     "npm-run-all": "^4.1.2"
   },
   "dependencies": {
-    "fs-extra": "^5.0.0"
+    "front-matter": "^2.3.0",
+    "fs-extra": "^5.0.0",
+    "globby": "^8.0.1",
+    "unique-array": "^1.0.1"
   }
 }
